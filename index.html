@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Українська типографіка — дефіс, тире, апостроф, лапки, наголос</title>
+    <meta name="description" content="Практичний довідник з цифрової типографіки для української мови: дефіс, тире, апостроф, лапки, наголос. Правила вживання, комбінації клавіш, Unicode-коди.">
+    <meta name="keywords" content="українська типографіка, апостроф, тире, дефіс, лапки, наголос, Unicode, правопис">
+    <meta name="author" content="typography.org.ua">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://typography.org.ua/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Українська типографіка — дефіс, тире, апостроф, лапки, наголос">
+    <meta property="og:description" content="Практичний довідник з цифрової типографіки для української мови. Правила вживання, комбінації клавіш, Unicode-коди.">
+    <meta property="og:url" content="https://typography.org.ua/">
+    <meta property="og:locale" content="uk_UA">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>—</text></svg>">
+    <style>
+        :root { --bg:#fafafa; --text:#1a1a1a; --accent:#1a5f7a; --accent-light:#e8f4f8; --border:#ddd; --code-bg:#f5f5f5; --success:#2e7d32; --error:#c62828; --warning:#f57c00; }
+        * { box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.7; color: var(--text); background: var(--bg); margin: 0; padding: 0; }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
+        header { text-align: center; padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
+        h1 { font-size: 2.2rem; margin: 0 0 0.5rem; color: var(--accent); }
+        .subtitle { color: #666; font-size: 1.1rem; margin: 0; }
+        nav { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin-bottom: 2rem; }
+        nav h2 { margin: 0 0 1rem; font-size: 1rem; color: #666; text-transform: uppercase; letter-spacing: 0.05em; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; }
+        nav a { color: var(--accent); text-decoration: none; padding: 0.3rem 0; display: block; }
+        nav a:hover { text-decoration: underline; }
+        section { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 2rem; margin-bottom: 1.5rem; }
+        h2 { color: var(--accent); font-size: 1.5rem; margin: 0 0 1rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--accent-light); }
+        h3 { font-size: 1.15rem; margin: 1.5rem 0 0.75rem; color: #333; }
+        h4 { font-size: 1rem; margin: 1.2rem 0 0.5rem; color: #444; }
+        p { margin: 0 0 1rem; }
+        .symbol-showcase { display: flex; align-items: center; gap: 1.5rem; padding: 1.5rem; background: var(--accent-light); border-radius: 8px; margin: 1rem 0; }
+        .symbol-big { font-size: 4rem; font-weight: 300; color: var(--accent); min-width: 80px; text-align: center; }
+        .symbol-info { flex: 1; }
+        .symbol-info strong { display: block; font-size: 1.1rem; margin-bottom: 0.25rem; }
+        .symbol-info .unicode { color: #666; font-family: monospace; font-size: 0.9rem; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.95rem; }
+        th, td { padding: 0.75rem; text-align: left; border: 1px solid var(--border); }
+        th { background: var(--accent); color: white; font-weight: 500; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .example { background: var(--code-bg); padding: 1rem 1.25rem; border-radius: 6px; margin: 0.75rem 0; border-left: 4px solid var(--accent); }
+        .example-good { border-left-color: var(--success); background: #e8f5e9; }
+        .example-bad { border-left-color: var(--error); background: #ffebee; }
+        .example-label { font-size: 0.8rem; font-weight: 600; text-transform: uppercase; margin-bottom: 0.25rem; }
+        .example-good .example-label { color: var(--success); }
+        .example-bad .example-label { color: var(--error); }
+        code { font-family: 'SF Mono', Monaco, monospace; background: var(--code-bg); padding: 0.15rem 0.4rem; border-radius: 3px; font-size: 0.9em; }
+        kbd { display: inline-block; padding: 0.2rem 0.5rem; font-family: inherit; font-size: 0.85rem; background: #333; color: white; border-radius: 4px; margin: 0 0.1rem; }
+        .rule-box { background: #fff8e1; border: 1px solid #ffcc02; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0; }
+        .rule-box strong { color: var(--warning); }
+        .tip-box { background: #e3f2fd; border: 1px solid #90caf9; border-radius: 6px; padding: 1rem 1.25rem; margin: 1rem 0; }
+        ul, ol { padding-left: 1.5rem; margin: 0.75rem 0; }
+        li { margin: 0.4rem 0; }
+        .comparison-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1rem 0; }
+        .comparison-card { background: #f9f9f9; border: 1px solid var(--border); border-radius: 6px; padding: 1rem; }
+        .comparison-card h4 { margin: 0 0 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .comparison-card .char { font-size: 1.5rem; color: var(--accent); }
+        .comparison-card.recommended { border-color: var(--success); background: #e8f5e9; }
+        .shortcut-table td:first-child { font-weight: 500; }
+        .shortcut-table code { background: #e8e8e8; }
+        footer { text-align: center; padding: 2rem; color: #666; font-size: 0.9rem; border-top: 1px solid var(--border); margin-top: 2rem; }
+        footer a { color: var(--accent); }
+        .note { font-size: 0.9rem; color: #666; font-style: italic; }
+        .toc-section { scroll-margin-top: 1rem; }
+        .keyboard-promo { background: linear-gradient(135deg, #e8f4f8 0%, #d4e8f0 100%); border: 1px solid var(--accent); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; }
+        .keyboard-promo strong { color: var(--accent); }
+        .keyboard-promo a { color: var(--accent); font-weight: 500; }
+        @media (max-width: 600px) { .container { padding: 1rem; } section { padding: 1.25rem; } h1 { font-size: 1.75rem; } .symbol-showcase { flex-direction: column; text-align: center; } table { font-size: 0.85rem; } th, td { padding: 0.5rem; } }
+        @media print { body { background: white; } .container { max-width: none; padding: 0; } nav, .keyboard-promo { display: none; } section { border: none; box-shadow: none; page-break-inside: avoid; } h2 { page-break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>Українська типографіка</h1>
+        <p class="subtitle">Дефіс, тире, апостроф, лапки, наголос — як правильно</p>
+    </header>
+    
+    <div class="keyboard-promo">
+        <strong>💡 Порада:</strong> Встановіть розкладку <a href="https://r2u.org.ua/wiki/keyboard/UkrainianUnicode" target="_blank" rel="noopener">Ukrainian Unicode</a> — вона дозволяє вводити апостроф, наголос, тире, лапки «» та інші типографські символи напряму з клавіатури. Працює в Windows, Linux та macOS.
+    </div>
+    
+    <nav>
+        <h2>Зміст</h2>
+        <ul>
+            <li><a href="#defis">Дефіс (-)</a></li>
+            <li><a href="#em-dash">Довге тире (—)</a></li>
+            <li><a href="#en-dash">Коротке тире (–)</a></li>
+            <li><a href="#spaces">Пробіли</a></li>
+            <li><a href="#apostrophe">Апостроф (ʼ)</a></li>
+            <li><a href="#quotes">Лапки</a></li>
+            <li><a href="#accent">Наголос (´)</a></li>
+            <li><a href="#shortcuts">Комбінації клавіш</a></li>
+            <li><a href="#summary">Зведена таблиця</a></li>
+        </ul>
+    </nav>
+
+    <section id="defis" class="toc-section">
+        <h2>Дефіс (-)</h2>
+        <div class="symbol-showcase">
+            <div class="symbol-big">-</div>
+            <div class="symbol-info">
+                <strong>Дефіс (hyphen)</strong>
+                <span class="unicode">U+002D • Орфографічний знак</span>
+            </div>
+        </div>
+        <p>Дефіс — це <strong>орфографічний знак</strong>, який є частиною слова. Він найкоротший з усіх горизонтальних рисок і зʼєднує частини складних слів або використовується в скороченнях.</p>
+        <h3>Коли використовувати</h3>
+        <ul>
+            <li><strong>Складні слова:</strong> південно-східний, синьо-жовтий, віце-президент</li>
+            <li><strong>Географічні назви:</strong> Івано-Франківськ, Камʼянець-Подільський</li>
+            <li><strong>Повтори:</strong> ледве-ледве, тихо-тихо</li>
+            <li><strong>Нарощення:</strong> 80-ті, 2-го, 1930-і рр., 60%-й</li>
+            <li><strong>Скорочення:</strong> тов-во, бібл-ка</li>
+            <li><strong>Приблизна кількість:</strong> пʼять-шість днів, день-два</li>
+        </ul>
+        <div class="rule-box">
+            <strong>Правило:</strong> Дефіс <u>завжди</u> пишеться без пробілів з обох боків.
+        </div>
+        <div class="example example-good"><div class="example-label">✓ Правильно</div>синьо-жовтий, 80-ті роки</div>
+        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>синьо - жовтий, 80 - ті роки</div>
+    </section>
+
+    <section id="em-dash" class="toc-section">
+        <h2>Довге тире (—)</h2>
+        <div class="symbol-showcase">
+            <div class="symbol-big">—</div>
+            <div class="symbol-info">
+                <strong>Довге тире (em dash)</strong>
+                <span class="unicode">U+2014 • Пунктуаційний знак</span>
+            </div>
+        </div>
+        <p>Довге тире — це <strong>пунктуаційний знак</strong>, який розділяє частини речення.</p>
+        <h3>Коли використовувати</h3>
+        <ul>
+            <li><strong>Між підметом і присудком:</strong> Київ — столиця України</li>
+            <li><strong>На місці пропущеного члена речення</strong></li>
+            <li><strong>Для позначення паузи або несподіваності</strong></li>
+            <li><strong>На початку реплік прямої мови:</strong> — Доброго дня!</li>
+            <li><strong>Між власними назвами:</strong> закон Бойля — Маріотта</li>
+        </ul>
+        <div class="rule-box">
+            <strong>Правило:</strong> Довге тире відділяється пробілами з обох боків. Перед тире — <em>нерозривний</em> пробіл.
+        </div>
+        <div class="example example-good"><div class="example-label">✓ Правильно</div>Київ — столиця України</div>
+        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>Київ—столиця, Київ-столиця</div>
+    </section>
+
+    <section id="en-dash" class="toc-section">
+        <h2>Коротке тире (–)</h2>
+        <div class="symbol-showcase">
+            <div class="symbol-big">–</div>
+            <div class="symbol-info">
+                <strong>Коротке тире (en dash)</strong>
+                <span class="unicode">U+2013 • Знак діапазону</span>
+            </div>
+        </div>
+        <p>Коротке тире використовується для позначення <strong>діапазонів та інтервалів</strong>.</p>
+        <h3>Коли використовувати</h3>
+        <ul>
+            <li><strong>Числові діапазони:</strong> 5–6 м, С. 28–30</li>
+            <li><strong>Дати:</strong> 1945–1947 рр., XV–XVIII ст.</li>
+            <li><strong>Часові інтервали:</strong> липень–серпень</li>
+            <li><strong>Маршрути:</strong> траса Київ–Чоп</li>
+        </ul>
+        <div class="rule-box">
+            <strong>Правило:</strong> Коротке тире в діапазонах пишеться <u>без пробілів</u>.
+        </div>
+        <div class="example example-good"><div class="example-label">✓ Правильно</div>1945–1947 рр., липень–серпень</div>
+        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>1945 – 1947 рр., 1945-1947 рр.</div>
+        <h3>Виняток: десятиліття</h3>
+        <div class="example">40-х – 50-х рр. (з пробілами)</div>
+    </section>
+
+    <section id="spaces" class="toc-section">
+        <h2>Пробіли</h2>
+        <h3>Нерозривний пробіл (U+00A0)</h3>
+        <p>Не дозволяє розірвати рядок у цьому місці.</p>
+        <h4>Де використовувати</h4>
+        <ul>
+            <li>Перед тире посеред тексту</li>
+            <li>Між числом і одиницею виміру: 100 км, 32 °C</li>
+            <li>Між числом і %: 18,4 %</li>
+            <li>Після № та §: № 331, § 36</li>
+            <li>Між ініціалами та прізвищем: В. І. Вернадський</li>
+            <li>У багатозначних числах: 1 200 000</li>
+            <li>Після однолітерних прийменників: у садку, і він</li>
+        </ul>
+    </section>
+
+    <section id="apostrophe" class="toc-section">
+        <h2>Апостроф (ʼ)</h2>
+        <div class="symbol-showcase">
+            <div class="symbol-big">ʼ</div>
+            <div class="symbol-info">
+                <strong>Modifier Letter Apostrophe</strong>
+                <span class="unicode">U+02BC • Рекомендований для української</span>
+            </div>
+        </div>
+        <h3>Варіанти символів</h3>
+        <div class="comparison-grid">
+            <div class="comparison-card recommended">
+                <h4><span class="char">ʼ</span> U+02BC</h4>
+                <p><strong>Рекомендований</strong> для української. Використовується в доменах .УКР. Доступний у <a href="https://r2u.org.ua/wiki/keyboard/UkrainianUnicode" target="_blank">Ukrainian Unicode</a>.</p>
+            </div>
+            <div class="comparison-card">
+                <h4><span class="char">'</span> U+0027</h4>
+                <p>Прямий апостроф з ASCII. Допустимий як запасний варіант.</p>
+            </div>
+            <div class="comparison-card">
+                <h4><span class="char">'</span> U+2019</h4>
+                <p>Типографський апостроф. <strong>Не рекомендується</strong> для української.</p>
+            </div>
+        </div>
+        <h3>Коли пишеться</h3>
+        <ul>
+            <li>Після губних (б, п, в, м, ф): мʼяч, пʼять, вʼюн</li>
+            <li>Після р: бурʼян, пірʼя</li>
+            <li>Після префіксів: зʼїзд, обʼєм</li>
+        </ul>
+        <div class="example example-good"><div class="example-label">✓ Правильно</div>мʼяч, пʼять, обʼєкт, памʼять</div>
+        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>м`яч (гравіс), м'яч (U+2019)</div>
+    </section>
+
+    <section id="quotes" class="toc-section">
+        <h2>Лапки</h2>
+        <table>
+            <tr><th>Вигляд</th><th>Назва</th><th>Unicode</th><th>Використання</th></tr>
+            <tr><td style="font-size:1.3rem">« »</td><td>Ялинки</td><td>U+00AB U+00BB</td><td><strong>Основні</strong></td></tr>
+            <tr><td style="font-size:1.3rem">" "</td><td>Англійські</td><td>U+201C U+201D</td><td>Внутрішні</td></tr>
+            <tr><td style="font-size:1.3rem">„ "</td><td>Німецькі</td><td>U+201E U+201C</td><td>Рукописні</td></tr>
+            <tr><td style="font-size:1.3rem">" "</td><td>Прямі</td><td>U+0022</td><td>Код</td></tr>
+        </table>
+        <h3>Вкладені лапки</h3>
+        <div class="example">«Це мій "Кобзар"», — сказав він.</div>
+        <div class="rule-box"><strong>Важливо:</strong> Не можна писати однакові лапки поруч: <span style="color:var(--error)">«Це мій «Кобзар»»</span></div>
+    </section>
+
+    <section id="accent" class="toc-section">
+        <h2>Наголос (´)</h2>
+        <div class="symbol-showcase">
+            <div class="symbol-big">о́</div>
+            <div class="symbol-info">
+                <strong>Combining Acute Accent</strong>
+                <span class="unicode">U+0301 • Комбінувальний знак</span>
+            </div>
+        </div>
+        <p>Знак наголосу — <strong>комбінувальний символ</strong>, який ставиться <em>після</em> голосної і відображається над нею.</p>
+        <h3>Коли ставити</h3>
+        <ul>
+            <li>Для розрізнення омографів: за́мок — замо́к</li>
+            <li>У словниках та навчальних матеріалах</li>
+            <li>Коли від наголосу залежить значення: пізна́ю — пізнаю́</li>
+        </ul>
+        <div class="example"><strong>Омографи:</strong> а́тлас (карти) — атла́с (тканина), о́бід (колесо) — обі́д (їжа)</div>
+        <h3>Технічно</h3>
+        <div class="example"><code>о</code> + <code>́</code> (U+0301) = <code>о́</code></div>
+        <div class="rule-box"><strong>Не плутайте!</strong> U+0301 (комбінувальний) ставиться після літери. U+00B4 (окремий символ) — виглядатиме як: о´</div>
+    </section>
+
+    <section id="shortcuts" class="toc-section">
+        <h2>Комбінації клавіш</h2>
+        <div class="keyboard-promo"><strong>Рекомендація:</strong> <a href="https://r2u.org.ua/wiki/keyboard/UkrainianUnicode" target="_blank">Ukrainian Unicode</a> — більшість символів через <kbd>AltGr</kbd></div>
+        
+        <h3>Ukrainian Unicode</h3>
+        <table class="shortcut-table">
+            <tr><th>Символ</th><th>Комбінація</th></tr>
+            <tr><td>ʼ</td><td><kbd>`</kbd> (ліворуч від 1)</td></tr>
+            <tr><td>́</td><td><kbd>AltGr</kbd> + <kbd>`</kbd></td></tr>
+            <tr><td>—</td><td><kbd>AltGr</kbd> + <kbd>-</kbd></td></tr>
+            <tr><td>–</td><td><kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd></td></tr>
+            <tr><td>«</td><td><kbd>AltGr</kbd> + <kbd>,</kbd></td></tr>
+            <tr><td>»</td><td><kbd>AltGr</kbd> + <kbd>.</kbd></td></tr>
+        </table>
+        
+        <h3>Windows Alt-коди</h3>
+        <table class="shortcut-table">
+            <tr><th>Символ</th><th>Alt-код</th></tr>
+            <tr><td>—</td><td><kbd>Alt</kbd> + 0151</td></tr>
+            <tr><td>–</td><td><kbd>Alt</kbd> + 0150</td></tr>
+            <tr><td>«</td><td><kbd>Alt</kbd> + 0171</td></tr>
+            <tr><td>»</td><td><kbd>Alt</kbd> + 0187</td></tr>
+            <tr><td>́</td><td><kbd>Alt</kbd> + 0769</td></tr>
+            <tr><td> </td><td><kbd>Alt</kbd> + 0160 (нерозривний)</td></tr>
+        </table>
+        
+        <h3>HTML</h3>
+        <table class="shortcut-table">
+            <tr><th>Символ</th><th>Код</th></tr>
+            <tr><td>—</td><td>&amp;mdash;</td></tr>
+            <tr><td>–</td><td>&amp;ndash;</td></tr>
+            <tr><td>«</td><td>&amp;laquo;</td></tr>
+            <tr><td>»</td><td>&amp;raquo;</td></tr>
+            <tr><td> </td><td>&amp;nbsp;</td></tr>
+            <tr><td>ʼ</td><td>&amp;#700;</td></tr>
+            <tr><td>́</td><td>&amp;#769;</td></tr>
+        </table>
+    </section>
+
+    <section id="summary" class="toc-section">
+        <h2>Зведена таблиця</h2>
+        <table>
+            <tr><th>Знак</th><th>Назва</th><th>Пробіли</th><th>Приклад</th></tr>
+            <tr><td style="font-size:1.5rem; text-align:center">-</td><td>Дефіс</td><td>Без</td><td>синьо-жовтий</td></tr>
+            <tr><td style="font-size:1.5rem; text-align:center">—</td><td>Довге тире</td><td>З обох боків</td><td>Київ — столиця</td></tr>
+            <tr><td style="font-size:1.5rem; text-align:center">–</td><td>Коротке тире</td><td>Без (діапазони)</td><td>1945–1947</td></tr>
+            <tr><td style="font-size:1.5rem; text-align:center">ʼ</td><td>Апостроф</td><td>Без</td><td>мʼяч</td></tr>
+            <tr><td style="font-size:1.5rem; text-align:center">« »</td><td>Лапки</td><td>Без (всередині)</td><td>«Кобзар»</td></tr>
+            <tr><td style="font-size:1.5rem; text-align:center">о́</td><td>Наголос</td><td>Комбінується</td><td>за́мок</td></tr>
+        </table>
+        
+        <h3>Типові помилки</h3>
+        <table>
+            <tr><th style="background:var(--error)">✗ Неправильно</th><th style="background:var(--success)">✓ Правильно</th></tr>
+            <tr><td>Київ-столиця</td><td>Київ — столиця</td></tr>
+            <tr><td>синьо - жовтий</td><td>синьо-жовтий</td></tr>
+            <tr><td>1945 – 1947</td><td>1945–1947</td></tr>
+            <tr><td>м`яч</td><td>мʼяч</td></tr>
+            <tr><td>"Кобзар"</td><td>«Кобзар»</td></tr>
+        </table>
+    </section>
+
+    <footer>
+        <p>Зібрано на основі Українського правопису 2019 року, ДСТУ та рекомендацій наукових видань.</p>
+        <p>Автор не є поліграфістом — це практичний довідник для тих, хто хоче писати правильно.</p>
+        <p>Розкладка: <a href="https://r2u.org.ua/wiki/keyboard/UkrainianUnicode" target="_blank" rel="noopener">Ukrainian Unicode</a> · <a href="https://github.com/professor-k/typography.org.ua" target="_blank" rel="noopener">GitHub</a></p>
+    </footer>
+</div>
+</body>
+</html>
