@@ -98,6 +98,7 @@
             <li><a href="#em-dash">Довге тире (—)</a></li>
             <li><a href="#en-dash">Коротке тире (–)</a></li>
             <li><a href="#spaces">Нерозривний пробіл</a></li>
+            <li><a href="#punctuation-spacing">Пробіли біля розділових знаків</a></li>
             <li><a href="#apostrophe">Апостроф (ʼ)</a></li>
             <li><a href="#quotes">Лапки</a></li>
             <li><a href="#accent">Наголос (´)</a></li>
@@ -156,9 +157,11 @@
         </ul>
         <div class="rule-box">
             <strong>Правило:</strong> Довге тире відділяється пробілами з обох боків. Перед тире — <a href="#spaces"><em>нерозривний</em> пробіл</a>.
+            <br><small>Примітка: існує традиція не ставити пробіли біля тире, але сучасна практика віддає перевагу пробілам.</small>
         </div>
         <div class="example example-good"><div class="example-label">✓ Правильно</div>Київ — столиця України</div>
-        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>Київ—столиця, Київ-столиця</div>
+        <div class="example"><div class="example-label">Альтернатива</div>Київ—столиця України</div>
+        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>Київ-столиця України</div>
     </section>
 
     <section id="en-dash" class="toc-section">
@@ -201,12 +204,37 @@
         <ul>
             <li>Перед тире посеред тексту</li>
             <li>Між числом і одиницею виміру: 100 км, 32 °C</li>
-            <li>Між числом і %: 18,4 %</li>
+            <li>Між числом і знаком %: 18,4 % (але написання без пробілу — 18,4% — також прийнятне)</li>
             <li>Після № та §: № 331, § 36</li>
             <li>Між ініціалами та прізвищем: В. І. Вернадський</li>
             <li>У багатозначних числах: 1 200 000</li>
             <li>Після однолітерних прийменників: у садку, і він</li>
         </ul>
+    </section>
+
+    <section id="punctuation-spacing" class="toc-section">
+        <h2>Пробіли біля розділових знаків</h2>
+        <p>Розділові знаки поділяються на дві групи, і правила для кожної — прості й послідовні.</p>
+
+        <h3>Одиночні розділові знаки</h3>
+        <p>Крапка, кома, двокрапка, крапка з комою, знак питання, знак оклику, три крапки та їх комбінації.</p>
+        <table>
+            <tr><th>Знак</th><th>Пробіл до</th><th>Пробіл після</th><th>Приклад</th></tr>
+            <tr><td>. , : ; ! ? … ?! !..</td><td>Ні</td><td>Так</td><td>Так, добре. Ні?!</td></tr>
+        </table>
+        <div class="example example-good"><div class="example-label">✓ Правильно</div>Привіт, світе! Як справи?.. Не знаю!</div>
+        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>Привіт , світе ! Як справи ?.. Не знаю !</div>
+
+        <h3>Парні розділові знаки</h3>
+        <p>Дужки, лапки — завжди мають пробіл ззовні, ніколи — всередині.</p>
+        <table>
+            <tr><th>Знаки</th><th>Ззовні</th><th>Всередині</th><th>Приклад</th></tr>
+            <tr><td>( )</td><td>Пробіл</td><td>Без пробілу</td><td>Київ (столиця України) — велике місто.</td></tr>
+            <tr><td>« »</td><td>Пробіл</td><td>Без пробілу</td><td>Він сказав: «Добре».</td></tr>
+            <tr><td>„ "</td><td>Пробіл</td><td>Без пробілу</td><td>Вона відповіла: „Згода".</td></tr>
+        </table>
+        <div class="example example-good"><div class="example-label">✓ Правильно</div>Тарас Шевченко (1814–1861) написав «Кобзар».</div>
+        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>Тарас Шевченко( 1814–1861 )написав« Кобзар ».</div>
     </section>
 
     <section id="apostrophe" class="toc-section">
@@ -246,11 +274,11 @@
     <section id="quotes" class="toc-section">
         <h2>Лапки</h2>
         <table>
-            <tr><th>Вигляд</th><th>Назва</th><th>Unicode</th><th>Використання</th></tr>
-            <tr><td style="font-size:1.3rem">« »</td><td>Ялинки</td><td>U+00AB U+00BB</td><td><strong>Основні</strong></td></tr>
-            <tr><td style="font-size:1.3rem">&#x201C; &#x201D;</td><td>Англійські</td><td>U+201C U+201D</td><td>Внутрішні</td></tr>
-            <tr><td style="font-size:1.3rem">&#x201E; &#x201C;</td><td>Німецькі</td><td>U+201E U+201C</td><td>Рукописні</td></tr>
-            <tr><td style="font-size:1.3rem">" "</td><td>Прямі</td><td>U+0022</td><td>Код, допустимі</td></tr>
+            <tr><th>Вигляд і назва</th><th>Unicode</th><th>Використання</th></tr>
+            <tr><td>«Ялинки»</td><td>U+00AB U+00BB</td><td><strong>Основні</strong></td></tr>
+            <tr><td>&#x201C;Англійські&#x201D;</td><td>U+201C U+201D</td><td>Внутрішні</td></tr>
+            <tr><td>&#x201E;Німецькі&#x201C;</td><td>U+201E U+201C</td><td>Рукописні</td></tr>
+            <tr><td>"Прямі"</td><td>U+0022</td><td>Код, допустимі</td></tr>
         </table>
         <div class="tip-box">
             <strong>На практиці:</strong> Прямі лапки (U+0022) допустимі, але «ялинки» — стандарт для української типографії.
