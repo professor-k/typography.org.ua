@@ -26,12 +26,17 @@
     <meta property="og:url" content="https://typography.org.ua/">
     <meta property="og:locale" content="uk_UA">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%231a5f7a'>Ї</text></svg>">
     <style>
         :root { --bg:#fafafa; --text:#1a1a1a; --accent:#1a5f7a; --accent-light:#e8f4f8; --border:#ddd; --code-bg:#f5f5f5; --success:#2e7d32; --error:#c62828; --warning:#f57c00; }
         * { box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.7; color: var(--text); background: var(--bg); margin: 0; padding: 0; }
+        body { font-family: 'PT Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif; line-height: 1.7; color: var(--text); background: var(--bg); margin: 0; padding: 0; }
         .container { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem; }
         header { text-align: center; padding: 3rem 0 2rem; border-bottom: 1px solid var(--border); margin-bottom: 2rem; }
         h1 { font-size: 2.2rem; margin: 0 0 0.5rem; color: var(--accent); }
@@ -94,6 +99,7 @@
     <nav>
         <h2>Зміст</h2>
         <ul>
+            <li><a href="#unicode">Unicode і розкладки</a></li>
             <li><a href="#defis">Дефіс (‐)</a></li>
             <li><a href="#em-dash">Довге тире (—)</a></li>
             <li><a href="#en-dash">Коротке тире (–)</a></li>
@@ -107,6 +113,12 @@
             <li><a href="#sources">Джерела</a></li>
         </ul>
     </nav>
+
+    <section id="unicode" class="toc-section">
+        <h2>Unicode і розкладки</h2>
+        <p>Кожен символ у цьому довіднику має унікальний номер у стандарті <a href="https://uk.wikipedia.org/wiki/Unicode" target="_blank" rel="noopener">Unicode</a> — наприклад, U+2014 (довге тире) або U+02BC (апостроф). Символи, які виглядають однаково, можуть мати різні коди і навпаки — різні коди можуть виглядати схоже.</p>
+        <p>Стандартні клавіатурні розкладки не дають доступу до більшості цих символів. Тому на цій сторінці <a href="#shortcuts">наведено</a> кілька способів їх введення: через спеціальні розкладки, Alt-коди та HTML-сутності.</p>
+    </section>
 
     <section id="defis" class="toc-section">
         <h2>Дефіс (‐)</h2>
@@ -267,8 +279,9 @@
             <li>Після р: бурʼян, пірʼя</li>
             <li>Після префіксів: зʼїзд, обʼєм</li>
         </ul>
-        <div class="example example-good"><div class="example-label">✓ Правильно</div>мʼяч, пʼять, обʼєкт, памʼять</div>
-        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>м`яч (гравіс), м&#x2019;яч (U+2019)</div>
+        <div class="example example-good"><div class="example-label">✓ Правильно</div>мʼяч, пʼять, обʼєкт, памʼять (U+02BC)</div>
+        <div class="example"><div class="example-label">Допустимо</div>м'яч (U+0027), м&#x2019;яч (U+2019)</div>
+        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>м`яч (гравіс U+0060)</div>
     </section>
 
     <section id="quotes" class="toc-section">
@@ -284,8 +297,11 @@
             <strong>На практиці:</strong> Прямі лапки (U+0022) допустимі, але «ялинки» — стандарт для української типографії.
         </div>
         <h3>Вкладені лапки</h3>
-        <div class="example">«Це мій &#x201C;Кобзар&#x201D;», — сказав він.</div>
-        <div class="rule-box"><strong>Важливо:</strong> Не можна писати однакові лапки поруч: <span style="color:var(--error)">«Це мій «Кобзар»»</span></div>
+        <div class="rule-box">
+            <strong>Правило:</strong> Якщо всередині тексту в лапках потрібні ще одні лапки, внутрішні мають відрізнятися від зовнішніх: зовнішні «ялинки», внутрішні &#x201C;англійські&#x201D;.
+        </div>
+        <div class="example example-good"><div class="example-label">✓ Правильно</div>«Це мій &#x201C;Кобзар&#x201D;», — сказав він.</div>
+        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>«Це мій «Кобзар»»</div>
     </section>
 
     <section id="accent" class="toc-section">
@@ -306,7 +322,7 @@
         </ul>
         <div class="example"><strong>Омографи:</strong> а́тлас (карти) — атла́с (тканина), до́рога (мила) — доро́га (шлях)</div>
         <h3>Технічно</h3>
-        <div class="example"><code>о</code> + <code>́</code> (U+0301) = <code>о́</code></div>
+        <div class="example">о + ́ (U+0301) = о́</div>
         <div class="rule-box"><strong>Не плутайте!</strong> U+0301 (комбінувальний) ставиться після літери. U+00B4 (окремий символ) — виглядатиме як: о´</div>
     </section>
 
@@ -327,10 +343,10 @@
             <li><strong>Пауза:</strong> Так… мабуть…</li>
         </ul>
         <div class="tip-box">
-            <strong>Технічно:</strong> Правильний символ — U+2026 (…). Три окремі крапки (...) допустимі, але типографічно гірші — інтервал між ними занадто великий.
+            <strong>Технічно:</strong> Правильний символ — U+2026 (…). Три окремі крапки (<span style="font-family:monospace">...</span>) допустимі, але типографічно гірші — інтервал між ними занадто великий.
         </div>
         <div class="example example-good"><div class="example-label">✓ Правильно</div>Він сказав… і замовк.</div>
-        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>Він сказав... і замовк.</div>
+        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>Він сказав<span style="font-family:monospace">...</span> і замовк.</div>
     </section>
 
     <section id="shortcuts" class="toc-section">
@@ -341,57 +357,59 @@
 
         <h3>Ukrainian Unicode</h3>
         <table class="shortcut-table">
-            <tr><th>Символ</th><th>Назва</th><th>Комбінація</th></tr>
-            <tr><td>—</td><td>довге тире</td><td><kbd>AltGr</kbd> + <kbd>-</kbd></td></tr>
-            <tr><td>–</td><td>коротке тире</td><td><kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd></td></tr>
-            <tr><td>␣</td><td>нерозривний пробіл</td><td><kbd>AltGr</kbd> + <kbd>Space</kbd></td></tr>
-            <tr><td>§</td><td>параграф</td><td><kbd>AltGr</kbd> + <kbd>3</kbd></td></tr>
-            <tr><td>₴</td><td>гривня</td><td><kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>3</kbd></td></tr>
-            <tr><td>ʼ</td><td>апостроф</td><td><kbd>Shift</kbd> + <kbd>`</kbd></td></tr>
-            <tr><td>«</td><td>лапка ліва</td><td><kbd>AltGr</kbd> + <kbd>,</kbd></td></tr>
-            <tr><td>»</td><td>лапка права</td><td><kbd>AltGr</kbd> + <kbd>.</kbd></td></tr>
-            <tr><td>„</td><td>лапка німецька ліва</td><td><kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>,</kbd></td></tr>
-            <tr><td>&#x201C;</td><td>лапка німецька права</td><td><kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>.</kbd></td></tr>
-            <tr><td>о́</td><td>наголос</td><td><kbd>AltGr</kbd> + <kbd>`</kbd></td></tr>
-            <tr><td>…</td><td>три крапки</td><td><kbd>AltGr</kbd> + <kbd>/</kbd></td></tr>
+            <tr><th>Символ</th><th>Unicode</th><th>Назва</th><th>Комбінація</th></tr>
+            <tr><td>—</td><td>U+2014</td><td>довге тире</td><td><kbd>AltGr</kbd> + <kbd>-</kbd></td></tr>
+            <tr><td>–</td><td>U+2013</td><td>коротке тире</td><td><kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>-</kbd></td></tr>
+            <tr><td>␣</td><td>U+00A0</td><td>нерозривний пробіл</td><td><kbd>AltGr</kbd> + <kbd>Space</kbd></td></tr>
+            <tr><td>§</td><td>U+00A7</td><td>параграф</td><td><kbd>AltGr</kbd> + <kbd>3</kbd></td></tr>
+            <tr><td>₴</td><td>U+20B4</td><td>гривня</td><td><kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>3</kbd></td></tr>
+            <tr><td>ʼ</td><td>U+02BC</td><td>апостроф</td><td><kbd>Shift</kbd> + <kbd>`</kbd></td></tr>
+            <tr><td>«</td><td>U+00AB</td><td>лапка ліва</td><td><kbd>AltGr</kbd> + <kbd>,</kbd></td></tr>
+            <tr><td>»</td><td>U+00BB</td><td>лапка права</td><td><kbd>AltGr</kbd> + <kbd>.</kbd></td></tr>
+            <tr><td>„</td><td>U+201E</td><td>лапка німецька ліва</td><td><kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>,</kbd></td></tr>
+            <tr><td>&#x201C;</td><td>U+201C</td><td>лапка німецька права</td><td><kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>.</kbd></td></tr>
+            <tr><td>о́</td><td>U+0301</td><td>наголос</td><td><kbd>AltGr</kbd> + <kbd>`</kbd></td></tr>
+            <tr><td>…</td><td>U+2026</td><td>три крапки</td><td><kbd>AltGr</kbd> + <kbd>/</kbd></td></tr>
         </table>
 
         <h3>Windows Alt-коди</h3>
+        <p>На цифровій клавіатурі (NumLock увімкнено). Працюють у більшості програм Windows.</p>
         <table class="shortcut-table">
-            <tr><th>Символ</th><th>Назва</th><th>Alt-код</th></tr>
-            <tr><td>—</td><td>довге тире</td><td><kbd>Alt</kbd> + 0151</td></tr>
-            <tr><td>–</td><td>коротке тире</td><td><kbd>Alt</kbd> + 0150</td></tr>
-            <tr><td>␣</td><td>нерозривний пробіл</td><td><kbd>Alt</kbd> + 0160</td></tr>
-            <tr><td>§</td><td>параграф</td><td><kbd>Alt</kbd> + 0167</td></tr>
-            <tr><td>₴</td><td>гривня</td><td><kbd>Alt</kbd> + 8372</td></tr>
-            <tr><td>ʼ</td><td>апостроф</td><td><kbd>Alt</kbd> + 700</td></tr>
-            <tr><td>«</td><td>лапка ліва</td><td><kbd>Alt</kbd> + 0171</td></tr>
-            <tr><td>»</td><td>лапка права</td><td><kbd>Alt</kbd> + 0187</td></tr>
-            <tr><td>„</td><td>лапка німецька ліва</td><td><kbd>Alt</kbd> + 8222</td></tr>
-            <tr><td>&#x201C;</td><td>лапка німецька права</td><td><kbd>Alt</kbd> + 8220</td></tr>
-            <tr><td>&#x201C;</td><td>лапка англійська ліва</td><td><kbd>Alt</kbd> + 8220</td></tr>
-            <tr><td>&#x201D;</td><td>лапка англійська права</td><td><kbd>Alt</kbd> + 8221</td></tr>
-            <tr><td>о́</td><td>наголос</td><td><kbd>Alt</kbd> + 0769</td></tr>
-            <tr><td>…</td><td>три крапки</td><td><kbd>Alt</kbd> + 0133</td></tr>
+            <tr><th>Символ</th><th>Unicode</th><th>Назва</th><th>Alt-код</th></tr>
+            <tr><td>—</td><td>U+2014</td><td>довге тире</td><td><kbd>Alt</kbd> + 0151</td></tr>
+            <tr><td>–</td><td>U+2013</td><td>коротке тире</td><td><kbd>Alt</kbd> + 0150</td></tr>
+            <tr><td>␣</td><td>U+00A0</td><td>нерозривний пробіл</td><td><kbd>Alt</kbd> + 0160</td></tr>
+            <tr><td>§</td><td>U+00A7</td><td>параграф</td><td><kbd>Alt</kbd> + 0167</td></tr>
+            <tr><td>«</td><td>U+00AB</td><td>лапка ліва</td><td><kbd>Alt</kbd> + 0171</td></tr>
+            <tr><td>»</td><td>U+00BB</td><td>лапка права</td><td><kbd>Alt</kbd> + 0187</td></tr>
+            <tr><td>„</td><td>U+201E</td><td>лапка німецька ліва</td><td><kbd>Alt</kbd> + 0132</td></tr>
+            <tr><td>&#x201C;</td><td>U+201C</td><td>лапка німецька права</td><td><kbd>Alt</kbd> + 0147</td></tr>
+            <tr><td>&#x201C;</td><td>U+201C</td><td>лапка англійська ліва</td><td><kbd>Alt</kbd> + 0147</td></tr>
+            <tr><td>&#x201D;</td><td>U+201D</td><td>лапка англійська права</td><td><kbd>Alt</kbd> + 0148</td></tr>
+            <tr><td>&#x2019;</td><td>U+2019</td><td>апостроф</td><td><kbd>Alt</kbd> + 0146</td></tr>
+            <tr><td>…</td><td>U+2026</td><td>три крапки</td><td><kbd>Alt</kbd> + 0133</td></tr>
         </table>
+        <div class="tip-box">
+            <strong>Без Alt-коду:</strong> Символи ₴ (гривня), ʼ (апостроф U+02BC) та о́ (наголос U+0301) не мають Alt-коду — їх немає в кодовій сторінці Windows-1252. Для ₴ використовуйте розкладку «Українська (розширена)» (<kbd>Shift</kbd> + <kbd>`</kbd>). Для решти — розкладку <a href="https://r2u.org.ua/wiki/keyboard/UkrainianUnicode" target="_blank" rel="noopener">Ukrainian Unicode</a> або таблицю символів (CharMap).
+        </div>
         
         <h3>HTML</h3>
         <table class="shortcut-table">
-            <tr><th>Символ</th><th>Назва</th><th>Код</th></tr>
-            <tr><td>—</td><td>довге тире</td><td><code>&amp;mdash;</code></td></tr>
-            <tr><td>–</td><td>коротке тире</td><td><code>&amp;ndash;</code></td></tr>
-            <tr><td>␣</td><td>нерозривний пробіл</td><td><code>&amp;nbsp;</code></td></tr>
-            <tr><td>§</td><td>параграф</td><td><code>&amp;sect;</code></td></tr>
-            <tr><td>₴</td><td>гривня</td><td><code>&amp;#8372;</code></td></tr>
-            <tr><td>ʼ</td><td>апостроф</td><td><code>&amp;#700;</code></td></tr>
-            <tr><td>«</td><td>лапка ліва</td><td><code>&amp;laquo;</code></td></tr>
-            <tr><td>»</td><td>лапка права</td><td><code>&amp;raquo;</code></td></tr>
-            <tr><td>„</td><td>лапка німецька ліва</td><td><code>&amp;bdquo;</code></td></tr>
-            <tr><td>&#x201C;</td><td>лапка німецька права</td><td><code>&amp;ldquo;</code></td></tr>
-            <tr><td>&#x201C;</td><td>лапка англійська ліва</td><td><code>&amp;ldquo;</code></td></tr>
-            <tr><td>&#x201D;</td><td>лапка англійська права</td><td><code>&amp;rdquo;</code></td></tr>
-            <tr><td>о́</td><td>наголос</td><td><code>&amp;#769;</code></td></tr>
-            <tr><td>…</td><td>три крапки</td><td><code>&amp;hellip;</code></td></tr>
+            <tr><th>Символ</th><th>Unicode</th><th>Назва</th><th>Код</th></tr>
+            <tr><td>—</td><td>U+2014</td><td>довге тире</td><td><code>&amp;mdash;</code></td></tr>
+            <tr><td>–</td><td>U+2013</td><td>коротке тире</td><td><code>&amp;ndash;</code></td></tr>
+            <tr><td>␣</td><td>U+00A0</td><td>нерозривний пробіл</td><td><code>&amp;nbsp;</code></td></tr>
+            <tr><td>§</td><td>U+00A7</td><td>параграф</td><td><code>&amp;sect;</code></td></tr>
+            <tr><td>₴</td><td>U+20B4</td><td>гривня</td><td><code>&amp;#8372;</code></td></tr>
+            <tr><td>ʼ</td><td>U+02BC</td><td>апостроф</td><td><code>&amp;#700;</code></td></tr>
+            <tr><td>«</td><td>U+00AB</td><td>лапка ліва</td><td><code>&amp;laquo;</code></td></tr>
+            <tr><td>»</td><td>U+00BB</td><td>лапка права</td><td><code>&amp;raquo;</code></td></tr>
+            <tr><td>„</td><td>U+201E</td><td>лапка німецька ліва</td><td><code>&amp;bdquo;</code></td></tr>
+            <tr><td>&#x201C;</td><td>U+201C</td><td>лапка німецька права</td><td><code>&amp;ldquo;</code></td></tr>
+            <tr><td>&#x201C;</td><td>U+201C</td><td>лапка англійська ліва</td><td><code>&amp;ldquo;</code></td></tr>
+            <tr><td>&#x201D;</td><td>U+201D</td><td>лапка англійська права</td><td><code>&amp;rdquo;</code></td></tr>
+            <tr><td>о́</td><td>U+0301</td><td>наголос</td><td><code>&amp;#769;</code></td></tr>
+            <tr><td>…</td><td>U+2026</td><td>три крапки</td><td><code>&amp;hellip;</code></td></tr>
         </table>
     </section>
 
