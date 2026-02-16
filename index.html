@@ -117,7 +117,8 @@
     <section id="unicode" class="toc-section">
         <h2>Unicode і розкладки</h2>
         <p>Кожен символ у цьому довіднику має унікальний номер у стандарті <a href="https://uk.wikipedia.org/wiki/Unicode" target="_blank" rel="noopener">Unicode</a> — наприклад, U+2014 (довге тире) або U+02BC (апостроф). Символи, які виглядають однаково, можуть мати різні коди і навпаки — різні коди можуть виглядати схоже.</p>
-        <p>Стандартні клавіатурні розкладки не дають доступу до більшості цих символів. Тому на цій сторінці <a href="#shortcuts">наведено</a> кілька способів їх введення: через спеціальні розкладки, Alt-коди та HTML-сутності.</p>
+        <p>Ми виходимо з того, що звичайні кириличні літери та основні розділові знаки не викликають труднощів. Але важливо: не можна замінювати кириличні літери на схожі латинські (наприклад, латинську «c» замість кириличної «с»). Це різні символи з різними кодами, і така заміна створює проблеми для пошуку, сортування та обробки тексту.</p>
+        <p>Стандартні клавіатурні розкладки не дають доступу до більшості типографських символів. Тому на цій сторінці <a href="#shortcuts">наведено</a> кілька способів їх введення: через спеціальні розкладки, Alt-коди та HTML-сутності.</p>
     </section>
 
     <section id="defis" class="toc-section">
@@ -370,10 +371,12 @@
             <tr><td>&#x201C;</td><td>U+201C</td><td>лапка німецька права</td><td><kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>.</kbd></td></tr>
             <tr><td>о́</td><td>U+0301</td><td>наголос</td><td><kbd>AltGr</kbd> + <kbd>`</kbd></td></tr>
             <tr><td>…</td><td>U+2026</td><td>три крапки</td><td><kbd>AltGr</kbd> + <kbd>/</kbd></td></tr>
+            <tr><td>ґ</td><td>U+0491</td><td>ґ мала (на 104-клавішних може бути відсутня)</td><td><kbd>AltGr</kbd> + <kbd>Г</kbd></td></tr>
+            <tr><td>Ґ</td><td>U+0490</td><td>Ґ велика</td><td><kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>Г</kbd></td></tr>
         </table>
 
         <h3>Windows Alt-коди</h3>
-        <p>На цифровій клавіатурі (NumLock увімкнено). Працюють у більшості програм Windows.</p>
+        <p>Щоб ввести символ через Alt-код: увімкніть <kbd>NumLock</kbd>, затисніть <kbd>Alt</kbd>, наберіть код на <strong>цифровій клавіатурі</strong> (не на верхньому рядку), відпустіть <kbd>Alt</kbd>. Код обовʼязково починається з нуля (наприклад, <kbd>Alt</kbd> + <kbd>0</kbd><kbd>1</kbd><kbd>5</kbd><kbd>1</kbd> для тире). Працює у більшості програм Windows.</p>
         <table class="shortcut-table">
             <tr><th>Символ</th><th>Unicode</th><th>Назва</th><th>Alt-код</th></tr>
             <tr><td>—</td><td>U+2014</td><td>довге тире</td><td><kbd>Alt</kbd> + 0151</td></tr>
@@ -391,6 +394,7 @@
         </table>
         <div class="tip-box">
             <strong>Без Alt-коду:</strong> Символи ₴ (гривня), ʼ (апостроф U+02BC) та о́ (наголос U+0301) не мають Alt-коду — їх немає в кодовій сторінці Windows-1252. Для ₴ використовуйте розкладку «Українська (розширена)» (<kbd>Shift</kbd> + <kbd>`</kbd>). Для решти — розкладку <a href="https://r2u.org.ua/wiki/keyboard/UkrainianUnicode" target="_blank" rel="noopener">Ukrainian Unicode</a> або таблицю символів (CharMap).
+            <br><strong>Ґ на 104-клавішних:</strong> На клавіатурах без окремої клавіші <kbd>\</kbd> літери ґ/Ґ вводяться через <kbd>AltGr</kbd> + <kbd>Г</kbd> / <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>Г</kbd> — працює як у стандартних розкладках Windows, так і в Ukrainian Unicode.
         </div>
         
         <h3>HTML</h3>
@@ -410,6 +414,8 @@
             <tr><td>&#x201D;</td><td>U+201D</td><td>лапка англійська права</td><td><code>&amp;rdquo;</code></td></tr>
             <tr><td>о́</td><td>U+0301</td><td>наголос</td><td><code>&amp;#769;</code></td></tr>
             <tr><td>…</td><td>U+2026</td><td>три крапки</td><td><code>&amp;hellip;</code></td></tr>
+            <tr><td>Ґ</td><td>U+0490</td><td>Ґ велика</td><td><code>&amp;#1168;</code></td></tr>
+            <tr><td>ґ</td><td>U+0491</td><td>ґ мала</td><td><code>&amp;#1169;</code></td></tr>
         </table>
     </section>
 
