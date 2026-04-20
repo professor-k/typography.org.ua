@@ -85,7 +85,12 @@
         .keyboard-promo { background: linear-gradient(135deg, #e8f4f8 0%, #d4e8f0 100%); border: 1px solid var(--accent); border-radius: 8px; padding: 1.25rem; margin: 1.5rem 0; }
         .keyboard-promo strong { color: var(--accent); }
         .keyboard-promo a { color: var(--accent); font-weight: 500; }
-        @media (max-width: 600px) { .container { padding: 1rem; } section { padding: 1.25rem; } h1 { font-size: 1.75rem; } .symbol-showcase { flex-direction: column; text-align: center; } table { font-size: 0.85rem; } th, td { padding: 0.5rem; } }
+        blockquote.epigraph { margin: 2rem 0 2.5rem; padding: 0 1.5rem; text-align: center; font-style: italic; color: #555; }
+        blockquote.epigraph p { font-size: 1.2rem; margin: 0 0 0.5rem; line-height: 1.5; }
+        blockquote.epigraph cite { font-style: normal; font-size: 0.9rem; color: #777; }
+        a.u { color: inherit; text-decoration: underline dotted; text-decoration-color: #aaa; text-underline-offset: 2px; }
+        a.u:hover { color: var(--accent); text-decoration-color: var(--accent); }
+        @media (max-width: 600px) { .container { padding: 1rem; } section { padding: 1.25rem; } h1 { font-size: 1.75rem; } .symbol-showcase { flex-direction: column; text-align: center; } table { font-size: 0.85rem; } th, td { padding: 0.5rem; } blockquote.epigraph p { font-size: 1.05rem; } }
         @media print { body { background: white; } .container { max-width: none; padding: 0; } nav, .keyboard-promo { display: none; } section { border: none; box-shadow: none; page-break-inside: avoid; } h2 { page-break-after: avoid; } }
     </style>
 </head>
@@ -96,10 +101,19 @@
         <p class="subtitle">Як правильно оформлювати цифрові тексти</p>
     </header>
 
+    <blockquote class="epigraph">
+        <p>«Типографіка — це ремесло, яке надає людській мові тривкої візуальної форми».</p>
+        <cite>— Роберт Брінгерст, «Основи стилю в типографіці»</cite>
+    </blockquote>
+
+    <section class="intro">
+        <p>Текст — це не лише букви. Довге тире на місці дефіса, «ялинки» на місці прямих лапок, апостроф на місці гравіса, нерозривний пробіл між ініціалами та прізвищем — дрібниця до дрібниці, і з них складається те, що звемо типографією. Добре оформлений текст не впадає в око — його просто легше читати.</p>
+        <p>Цей довідник — практичний, без філософії: що, коли і як.</p>
+    </section>
+
     <nav>
         <h2>Зміст</h2>
         <ul>
-            <li><a href="#unicode">Unicode і розкладки</a></li>
             <li><a href="#defis">Дефіс (‐)</a></li>
             <li><a href="#em-dash">Довге тире (—)</a></li>
             <li><a href="#en-dash">Коротке тире (–)</a></li>
@@ -114,25 +128,18 @@
         </ul>
     </nav>
 
-    <section id="unicode" class="toc-section">
-        <h2>Unicode і розкладки</h2>
-        <p>Кожен символ у цьому довіднику має унікальний номер у стандарті <a href="https://uk.wikipedia.org/wiki/Unicode" target="_blank" rel="noopener">Unicode</a> — наприклад, U+2014 (довге тире) або U+02BC (апостроф). Символи, які виглядають однаково, можуть мати різні коди і навпаки — різні коди можуть виглядати схоже.</p>
-        <p>Ми виходимо з того, що звичайні кириличні літери та основні розділові знаки не викликають труднощів. Але важливо: не можна замінювати кириличні літери на схожі латинські (наприклад, латинську «c» замість кириличної «с»). Це різні символи з різними кодами, і така заміна створює проблеми для пошуку, сортування та обробки тексту.</p>
-        <p>Стандартні клавіатурні розкладки не дають доступу до більшості типографських символів. Тому на цій сторінці <a href="#shortcuts">наведено</a> кілька способів їх введення: через спеціальні розкладки, Alt-коди та HTML-сутності.</p>
-    </section>
-
     <section id="defis" class="toc-section">
         <h2>Дефіс (‐)</h2>
         <div class="symbol-showcase">
             <div class="symbol-big">&#x2010;</div>
             <div class="symbol-info">
                 <strong>Дефіс (hyphen)</strong>
-                <span class="unicode">U+2010 • Орфографічний знак</span>
+                <span class="unicode"><a class="u" href="#shortcuts">U+2010</a> • Орфографічний знак</span>
             </div>
         </div>
         <p>Дефіс — це <strong>орфографічний знак</strong>, який є частиною слова. Він найкоротший з усіх горизонтальних рисок і зʼєднує частини складних слів або використовується в скороченнях.</p>
         <div class="tip-box">
-            <strong>Технічно:</strong> Правильний символ — U+2010 (hyphen). На практиці допустимо використовувати U+002D (hyphen-minus) з клавіатури — візуально вони однакові.
+            <strong>Технічно:</strong> Правильний символ — <a class="u" href="#shortcuts">U+2010</a> (hyphen). На практиці допустимо використовувати <a class="u" href="#shortcuts">U+002D</a> (hyphen-minus) з клавіатури — візуально вони однакові.
         </div>
         <h3>Коли використовувати</h3>
         <ul>
@@ -156,7 +163,7 @@
             <div class="symbol-big">—</div>
             <div class="symbol-info">
                 <strong>Довге тире (em dash)</strong>
-                <span class="unicode">U+2014 • Пунктуаційний знак</span>
+                <span class="unicode"><a class="u" href="#shortcuts">U+2014</a> • Пунктуаційний знак</span>
             </div>
         </div>
         <p>Довге тире — це <strong>пунктуаційний знак</strong>, який розділяє частини речення.</p>
@@ -183,7 +190,7 @@
             <div class="symbol-big">–</div>
             <div class="symbol-info">
                 <strong>Коротке тире (en dash)</strong>
-                <span class="unicode">U+2013 • Знак діапазону</span>
+                <span class="unicode"><a class="u" href="#shortcuts">U+2013</a> • Знак діапазону</span>
             </div>
         </div>
         <p>Коротке тире використовується для позначення <strong>діапазонів та інтервалів</strong>.</p>
@@ -209,7 +216,7 @@
             <div class="symbol-big">␣</div>
             <div class="symbol-info">
                 <strong>No-Break Space</strong>
-                <span class="unicode">U+00A0 • Не дозволяє розрив рядка</span>
+                <span class="unicode"><a class="u" href="#shortcuts">U+00A0</a> • Не дозволяє розрив рядка</span>
             </div>
         </div>
         <p>Нерозривний пробіл виглядає як звичайний, але не дозволяє розірвати рядок у цьому місці.</p>
@@ -256,21 +263,21 @@
             <div class="symbol-big">ʼ</div>
             <div class="symbol-info">
                 <strong>Modifier Letter Apostrophe</strong>
-                <span class="unicode">U+02BC • Рекомендований для української</span>
+                <span class="unicode"><a class="u" href="#shortcuts">U+02BC</a> • Рекомендований для української</span>
             </div>
         </div>
         <h3>Варіанти символів</h3>
         <div class="comparison-grid">
             <div class="comparison-card recommended">
-                <h4><span class="char">ʼ</span> U+02BC</h4>
+                <h4><span class="char">ʼ</span> <a class="u" href="#shortcuts">U+02BC</a></h4>
                 <p><strong>Рекомендований</strong> для української. Використовується в доменах .УКР.</p>
             </div>
             <div class="comparison-card">
-                <h4><span class="char">'</span> U+0027</h4>
+                <h4><span class="char">'</span> <a class="u" href="#shortcuts">U+0027</a></h4>
                 <p>Прямий апостроф з ASCII. Допустимий варіант — візуально прийнятний, легко вводиться.</p>
             </div>
             <div class="comparison-card">
-                <h4><span class="char">&#x2019;</span> U+2019</h4>
+                <h4><span class="char">&#x2019;</span> <a class="u" href="#shortcuts">U+2019</a></h4>
                 <p>Типографський апостроф (English). Для української — допустимий, але не рекомендований.</p>
             </div>
         </div>
@@ -280,22 +287,22 @@
             <li>Після р: бурʼян, пірʼя</li>
             <li>Після префіксів: зʼїзд, обʼєм</li>
         </ul>
-        <div class="example example-good"><div class="example-label">✓ Правильно</div>мʼяч, пʼять, обʼєкт, памʼять (U+02BC)</div>
-        <div class="example"><div class="example-label">Допустимо</div>м'яч (U+0027), м&#x2019;яч (U+2019)</div>
-        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>м`яч (гравіс U+0060)</div>
+        <div class="example example-good"><div class="example-label">✓ Правильно</div>мʼяч, пʼять, обʼєкт, памʼять (<a class="u" href="#shortcuts">U+02BC</a>)</div>
+        <div class="example"><div class="example-label">Допустимо</div>м'яч (<a class="u" href="#shortcuts">U+0027</a>), м&#x2019;яч (<a class="u" href="#shortcuts">U+2019</a>)</div>
+        <div class="example example-bad"><div class="example-label">✗ Неправильно</div>м`яч (гравіс <a class="u" href="#shortcuts">U+0060</a>)</div>
     </section>
 
     <section id="quotes" class="toc-section">
         <h2>Лапки</h2>
         <table>
             <tr><th>Вигляд і назва</th><th>Unicode</th><th>Використання</th></tr>
-            <tr><td>«Ялинки»</td><td>U+00AB U+00BB</td><td><strong>Основні</strong></td></tr>
-            <tr><td>&#x201C;Англійські&#x201D;</td><td>U+201C U+201D</td><td>Внутрішні</td></tr>
-            <tr><td>&#x201E;Німецькі&#x201C;</td><td>U+201E U+201C</td><td>Рукописні</td></tr>
-            <tr><td>"Прямі"</td><td>U+0022</td><td>Код, допустимі</td></tr>
+            <tr><td>«Ялинки»</td><td><a class="u" href="#shortcuts">U+00AB</a> <a class="u" href="#shortcuts">U+00BB</a></td><td><strong>Основні</strong></td></tr>
+            <tr><td>&#x201C;Англійські&#x201D;</td><td><a class="u" href="#shortcuts">U+201C</a> <a class="u" href="#shortcuts">U+201D</a></td><td>Внутрішні</td></tr>
+            <tr><td>&#x201E;Німецькі&#x201C;</td><td><a class="u" href="#shortcuts">U+201E</a> <a class="u" href="#shortcuts">U+201C</a></td><td>Рукописні</td></tr>
+            <tr><td>"Прямі"</td><td><a class="u" href="#shortcuts">U+0022</a></td><td>Код, допустимі</td></tr>
         </table>
         <div class="tip-box">
-            <strong>На практиці:</strong> Прямі лапки (U+0022) допустимі, але «ялинки» — стандарт для української типографії.
+            <strong>На практиці:</strong> Прямі лапки (<a class="u" href="#shortcuts">U+0022</a>) допустимі, але «ялинки» — стандарт для української типографії.
         </div>
         <h3>Вкладені лапки</h3>
         <div class="rule-box">
@@ -311,7 +318,7 @@
             <div class="symbol-big">о́</div>
             <div class="symbol-info">
                 <strong>Combining Acute Accent</strong>
-                <span class="unicode">U+0301 • Комбінувальний знак</span>
+                <span class="unicode"><a class="u" href="#shortcuts">U+0301</a> • Комбінувальний знак</span>
             </div>
         </div>
         <p>Знак наголосу — <strong>комбінувальний символ</strong>, який ставиться <em>після</em> голосної і відображається над нею.</p>
@@ -323,8 +330,8 @@
         </ul>
         <div class="example"><strong>Омографи:</strong> а́тлас (карти) — атла́с (тканина), до́рога (мила) — доро́га (шлях)</div>
         <h3>Технічно</h3>
-        <div class="example">о + ́ (U+0301) = о́</div>
-        <div class="rule-box"><strong>Не плутайте!</strong> U+0301 (комбінувальний) ставиться після літери. U+00B4 (окремий символ) — виглядатиме як: о´</div>
+        <div class="example">о + ́ (<a class="u" href="#shortcuts">U+0301</a>) = о́</div>
+        <div class="rule-box"><strong>Не плутайте!</strong> <a class="u" href="#shortcuts">U+0301</a> (комбінувальний) ставиться після літери. <a class="u" href="#shortcuts">U+00B4</a> (окремий символ) — виглядатиме як: о´</div>
     </section>
 
     <section id="ellipsis" class="toc-section">
@@ -333,7 +340,7 @@
             <div class="symbol-big">…</div>
             <div class="symbol-info">
                 <strong>Horizontal Ellipsis</strong>
-                <span class="unicode">U+2026 • Один символ</span>
+                <span class="unicode"><a class="u" href="#shortcuts">U+2026</a> • Один символ</span>
             </div>
         </div>
         <p>Три крапки — це <strong>один символ</strong>, а не три окремі крапки. Позначає незавершеність, пропуск або паузу.</p>
@@ -344,7 +351,7 @@
             <li><strong>Пауза:</strong> Так… мабуть…</li>
         </ul>
         <div class="tip-box">
-            <strong>Технічно:</strong> Правильний символ — U+2026 (…). Три окремі крапки (<span style="font-family:monospace">...</span>) допустимі, але типографічно гірші — інтервал між ними занадто великий.
+            <strong>Технічно:</strong> Правильний символ — <a class="u" href="#shortcuts">U+2026</a> (…). Три окремі крапки (<span style="font-family:monospace">...</span>) допустимі, але типографічно гірші — інтервал між ними занадто великий.
         </div>
         <div class="example example-good"><div class="example-label">✓ Правильно</div>Він сказав… і замовк.</div>
         <div class="example example-bad"><div class="example-label">✗ Неправильно</div>Він сказав<span style="font-family:monospace">...</span> і замовк.</div>
@@ -352,6 +359,10 @@
 
     <section id="shortcuts" class="toc-section">
         <h2>Як набирати?</h2>
+        <p>Кожен символ у цьому довіднику має унікальний номер у стандарті <a href="https://uk.wikipedia.org/wiki/Unicode" target="_blank" rel="noopener">Unicode</a> — наприклад, U+2014 (довге тире) або U+02BC (апостроф). Символи, які виглядають однаково, можуть мати різні коди; і навпаки — різні коди можуть виглядати схоже.</p>
+        <p>Звичайні кириличні літери й основні розділові знаки не викликають труднощів. Але важливо: не можна замінювати кириличні літери на схожі латинські (наприклад, латинську «c» замість кириличної «с»). Це різні символи з різними кодами, і така заміна створює проблеми для пошуку, сортування та обробки тексту.</p>
+        <p>Стандартні клавіатурні розкладки не дають доступу до більшості типографських символів. Нижче — кілька способів їх введення: через спеціальні розкладки, Alt-коди та HTML-сутності.</p>
+
         <div class="keyboard-promo">
             <strong>Порада:</strong> Встановіть розкладку <a href="https://r2u.org.ua/wiki/keyboard/UkrainianUnicode" target="_blank" rel="noopener">Ukrainian Unicode</a> — вона дозволяє вводити апостроф, наголос, тире, лапки «» та інші типографські символи напряму з клавіатури. Працює в Windows, Linux та macOS.
         </div>
@@ -396,7 +407,7 @@
             <strong>Без Alt-коду:</strong> Символи ₴ (гривня), ʼ (апостроф U+02BC) та о́ (наголос U+0301) не мають Alt-коду — їх немає в кодовій сторінці Windows-1252. Для ₴ використовуйте розкладку «Українська (розширена)» (<kbd>Shift</kbd> + <kbd>`</kbd>). Для решти — розкладку <a href="https://r2u.org.ua/wiki/keyboard/UkrainianUnicode" target="_blank" rel="noopener">Ukrainian Unicode</a> або таблицю символів (CharMap).
             <br><strong>Ґ на 104-клавішних:</strong> На клавіатурах без окремої клавіші <kbd>\</kbd> літери ґ/Ґ вводяться через <kbd>AltGr</kbd> + <kbd>Г</kbd> / <kbd>AltGr</kbd> + <kbd>Shift</kbd> + <kbd>Г</kbd> — працює як у стандартних розкладках Windows, так і в Ukrainian Unicode.
         </div>
-        
+
         <h3>HTML</h3>
         <table class="shortcut-table">
             <tr><th>Символ</th><th>Unicode</th><th>Назва</th><th>Код</th></tr>
@@ -430,9 +441,9 @@
             <li><a href="https://undiasd.archives.gov.ua/doc/DSTU%204163.pdf" target="_blank" rel="noopener">ДСТУ 4163:2020</a> — оформлення документів</li>
         </ul>
 
-        <h3>Апостроф U+02BC</h3>
+        <h3>Апостроф <a class="u" href="#shortcuts">U+02BC</a></h3>
         <ul>
-            <li><a href="http://uanic.net/list-na-pidtrimku-ukra%D1%97nskogo-apostrofa/" target="_blank" rel="noopener">UANIC</a> — лист на підтримку апострофа U+02BC</li>
+            <li><a href="http://uanic.net/list-na-pidtrimku-ukra%D1%97nskogo-apostrofa/" target="_blank" rel="noopener">UANIC</a> — лист на підтримку апострофа <a class="u" href="#shortcuts">U+02BC</a></li>
             <li><a href="https://r2u.org.ua/forum/viewtopic.php?t=2121" target="_blank" rel="noopener">R2U форум</a> — обговорення апострофа в розкладці</li>
         </ul>
 
